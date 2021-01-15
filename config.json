@@ -1,0 +1,8 @@
+{
+    "Channel ID": "Channel ID used for bot messages",
+    "Token": "Discord bot token",
+    "API key": "Trello",
+    "API secret": "Trello",
+    "Boards MVLS": ["List of Board IDS"],
+    "Boards CTLS": ["List of Board IDS"]
+}
