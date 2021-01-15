@@ -20,7 +20,7 @@ async def cardCreated(cardName, channel):
 
     Args:
         cardName (STR): Name of a given card
-        channel (OBJ): Discord channel object
+        channel (OBJ): Discord object
     """
     global lastAction
 
@@ -41,7 +41,7 @@ async def cardMovedUp(cardName, destination, channel, author):
     Args:
         cardName (STR): Name of a given card
         destination (STR): Name of a given distentation
-        channel (OBJ): Discord channel object
+        channel (OBJ): Discord object
         author (str, optional): Name of author. Defaults to "Unknown".
     """
     global lastAction
@@ -64,7 +64,7 @@ async def cardErraticMove (cardName, source, destination, channel, author):
     Args:
         cardName (STR): Name of a given card
         destination (STR): Name of a given distentation
-        channel (OBJ): Discord channel object
+        channel (OBJ): Discord object
         author (str, optional): Name of author. Defaults to "Unknown".
     """
     global lastAction
@@ -86,7 +86,7 @@ async def defaultCardMove(cardName, source, destination, channel, author):
     Args:
         cardName (STR): Name of a given card
         destination (STR): Name of a given distentation
-        channel (OBJ): Discord channel object
+        channel (OBJ): Discord object
         author (str, optional): Name of author. Defaults to "Unknown".
     """
     global lastAction
