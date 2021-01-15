@@ -91,12 +91,12 @@ async def defaultCardMove(cardName, source, destination, channel, author):
     """
     global lastAction
 
-    if (lastAction != f"Default Move {cardName}"):
-        embed = discord.Embed(title="A title", colour=discord.Colour(0x12e4ff), url="https://discordapp.com", description="```A description```")
+    if (lastAction != f"Default Move {cardName}: {destination}"):
+        embed = discord.Embed(title=f"{cardName}", colour=discord.Colour(0x12e4ff), url="https://discordapp.com", description="```A description```")
         embed.set_image(url="https://i.imgur.com/ST5Q7hj.png")
         embed.set_thumbnail(url="https://i.imgur.com/ST5Q7hj.png")
         embed.set_author(name="Bot Name", url="https://discordapp.com", icon_url="https://i.imgur.com/ST5Q7hj.png")
         embed.set_footer(text="A footer", icon_url="https://i.imgur.com/ST5Q7hj.png")
-        embed.add_field(name=f"A name", value="Some value", inline = False)
-        lastAction = f"Default Move {cardName}"
+        embed.add_field(name=f"Card moved from {source} to {destination}", value="Some value", inline = False)
+        lastAction = f"Default Move {cardName}: {destination}"
         await channel.send(embed=embed)
