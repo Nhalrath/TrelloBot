@@ -1,5 +1,6 @@
 {
     "Channel ID": "Channel ID used for bot messages",
+    "Time Zone": "See Pytz timezones list for correct usage",
     "Token": "Discord bot token",
     "API key": "Trello",
     "API secret": "Trello",
