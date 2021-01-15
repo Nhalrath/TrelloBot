@@ -1,17 +1,17 @@
-from trello import TrelloClient
+from Util_PMP import cardCreated, cardMovedUp, config, cardErraticMove, defaultCardMove
 from datetime import datetime, timedelta
-from Util_PMP import cardCreated, cardMovedUp, config, cardErraticMove
+from trello import TrelloClient
 from discord.ext import tasks
-import pytz
-import time
 import discord
 import asyncio
+import pytz
+import time
 
 bot = discord.Client()
 bot.executionTime = 80
 bot.clientTrello = TrelloClient(api_key=config.get("API key"), api_secret=config.get("API secret"))
 
-async def checkChange(aDict, card, channel):
+async def checkChange(aDict, card, channel, bypass = True):
     """
     Function checks if move history is forward
 
@@ -19,16 +19,23 @@ async def checkChange(aDict, card, channel):
         aDict (DICT): Dictionary containing card information
         card (OBJ): Card object
     """
+
     author =  bot.clientTrello.get_member(card.idMembers[0]).username if card.idMembers else "Unknown"
+    if not bypass:
 
-    if (aDict.get('source').get('name') == "In Progress" and aDict.get('destination').get('name') in ["Review/Editing", "Review", "Review/QA"]):
-        await cardMovedUp(card.name.upper(), aDict.get('destination').get('name'), channel, author)
+        if (aDict.get('source').get('name') == "In Progress" and aDict.get('destination').get('name') in ["Review/Editing", "Review", "Review/QA"]):
+            await cardMovedUp(card.name.upper(), aDict.get('destination').get('name'), channel, author)
 
-    elif (aDict.get('source').get('name') in ["Review/Editing", "Review", "Review/QA"] and aDict.get('destination').get('name') == "Done"):
-        await cardMovedUp(card.name.upper(), aDict.get('destination').get('name'), channel, author)
+        elif (aDict.get('source').get('name') in ["Review/Editing", "Review", "Review/QA"] and aDict.get('destination').get('name') == "Done"):
+            await cardMovedUp(card.name.upper(), aDict.get('destination').get('name'), channel, author)
+
+        else:
+            await cardErraticMove(card.name, aDict.get('source').get('name'), aDict.get('destination').get('name'), channel, author)
 
     else:
-        await cardErraticMove(card.name, aDict.get('source').get('name'), aDict.get('destination').get('name'), channel, author)
+        await defaultCardMove(card.name, aDict.get('source').get('name'), aDict.get('destination').get('name'), channel, author)
+
+
 
 
 async def checkCardMovement(listID, targetTime):
@@ -40,7 +47,9 @@ async def checkCardMovement(listID, targetTime):
     """
     for card in listID:
         last_move = card.list_movements() 
+
         try:
+
             if (last_move[0].get('datetime').replace(tzinfo=pytz.UTC) > targetTime):
                 await checkChange(last_move[0], card, bot.get_channel(config.get("Channel ID")))
 
