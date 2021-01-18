@@ -158,7 +158,7 @@ def calculatePoint(listName):
         print(f"Given {listName}: 3")
         return 3
     
-    elif listName in ["Done"]:
+    elif listName in ["Done", "Ready for Implementation"]:
         print(f"Given {listName}: 4")
         return 4
     
