@@ -238,7 +238,7 @@ async def performanceChart(channel = config.channelID_M):
     await channel.send(embed=embed)
     
     
-    ratio = (config.countW_Done)/(config.countW + config.countW_P + config.countW_Done)
+    ratio = (config.countW_Done)/(config.countW)
     percent = round(ratio * 100 , 2)
     loaded = round(ratio * 20) * "#"
     unloaded = (20 - round(ratio * 20)) * "-"
@@ -246,7 +246,7 @@ async def performanceChart(channel = config.channelID_M):
     string = f"```asciidoc\nBoard: Writing ({config.countW})\n----------------------\nOpen:: {config.countW_TODO}\nIn Progress:: {config.countW_P}\nDone:: {config.countW_Done}\nTotal Progress: {percent}%\n----------------------\n{progressBar}```"
     await channel.send(string)
 
-    ratio = (config.countA_Done)/(config.countA + config.countA_P + config.countA_Done)
+    ratio = (config.countA_Done)/(config.countA)
     percent = round(ratio * 100 , 2)
     loaded = round(ratio * 20) * "#"
     unloaded = (20 - round(ratio * 20)) * "-"
@@ -254,7 +254,7 @@ async def performanceChart(channel = config.channelID_M):
     string = f"```asciidoc\nBoard: Art ({config.countA})\n----------------------\nOpen:: {config.countA_TODO}\nIn Progress:: {config.countA_P}\nDone:: {config.countA_Done}\nTotal Progress: {percent}%\n----------------------\n{progressBar}```"
     await channel.send(string)
     
-    ratio = (config.countS_Done)/(config.countS + config.countS_P + config.countS_Done)
+    ratio = (config.countS_Done)/(config.countS)
     percent = round(ratio * 100 , 2)
     loaded = round(ratio * 20) * "#"
     unloaded = (20 - round(ratio * 20)) * "-"
