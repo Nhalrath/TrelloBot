@@ -100,7 +100,7 @@ async def checkTime():
         await checkTrello((datetime.now(pytz.timezone(config.timezone)) - timedelta(0,config.executionTime)).replace(tzinfo=pytz.UTC))
         result = (time.time() - start_time)
         config.executionTime = result
-        print(f"#########{result}#########")
+        print(f"#########->{result:.2f} seconds <-#########")
         
         
 @bot.event
