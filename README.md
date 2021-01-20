@@ -26,18 +26,27 @@ pytz == 2020.5
 ## [Kureha Kurono 黒乃くれは](https://twitter.com/KurehaKurono/)
 
 
+
+<img align="left" height="25" src="https://cdn.discordapp.com/attachments/799536846689271808/801423853057212416/iconfinder_1_Youtube_colored_svg_5296521.webp" alt="Kureha Kurono">
+
+
 [Youtube](https://www.youtube.com/channel/UCFVkfdFmaOh7BCtrqw8YvaA)
 
-[Twitch](https://www.twitch.tv/kurehakurono)
+
+<img align="left" height="25" src="https://cdn.discordapp.com/attachments/799536846689271808/801423852197511218/iconfinder_1_Instagram_colored_svg_1_5296765.webp" alt="Kureha Kurono">
 
 [Instagram](https://www.instagram.com/kurehakurono/)
 
-[Bilibili](https://space.bilibili.com/421435246)
+
+<img align="left" height="25" src="https://cdn.discordapp.com/attachments/799536846689271808/801424942498840617/iconfinder_twitch-social-network-brand-logo_1829982.png" alt="Kureha Kurono">
+
+
+[Twitch](https://www.twitch.tv/kurehakurono)
 
 
 
 <p align="center">
-  <img src="https://static.integromat.com/img/templates/2972.png">
+  <img width="150" src="https://static.integromat.com/img/templates/2972.png">
 </p>
 
 <p align="center">
