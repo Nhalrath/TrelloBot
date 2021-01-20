@@ -70,17 +70,14 @@ async def cardMovedUp(cardName, destination, channel, author):
         author (str, optional): Name of author. Defaults to "Unknown".
     """
     if (config.lastAction != f"Card MovedUP {cardName}"):
-        try:
-            embed = discord.Embed(title="🚨 WEE WOO WEE WOO 🚨", colour=discord.Colour(0x12e4ff), url="https://discordapp.com", description="```css\nWe need more people like you!\nYou're a star!💪🌟```")
-            embed.set_image(url="https://i.ytimg.com/vi/oZw26clV1UI/maxresdefault.jpg")
-            embed.set_thumbnail(url="https://fhr.fra1.cdn.digitaloceanspaces.com/NHLGamer/ECL/ECL_8/team_logos/Pro/ECL8%20Pro%20-%20Poggers.png")
-            embed.set_author(name="Postman Phat", url="https://discordapp.com", icon_url="https://cdn.discordapp.com/app-icons/795966880779206656/8b6d6c8e089b7cd499435333dd3c0bf3.png?size=64")
-            embed.set_footer(text="Do people even read this?", icon_url="https://pbs.twimg.com/profile_images/1334111535082446849/LdHGWkZq_400x400.jpg")
-            embed.add_field(name=f"{cardName} has advanced to {destination}!!!", value=f"Made by: {author}", inline = False)
-            config.lastAction = f"Card MovedUP {cardName}"
-            await channel.send(embed=embed)
-        except:
-            None
+        embed = discord.Embed(title="🚨 WEE WOO WEE WOO 🚨", colour=discord.Colour(0x12e4ff), url="https://discordapp.com", description="```css\nWe need more people like you!\nYou're a star!💪🌟```")
+        embed.set_image(url="https://i.ytimg.com/vi/oZw26clV1UI/maxresdefault.jpg")
+        embed.set_thumbnail(url="https://fhr.fra1.cdn.digitaloceanspaces.com/NHLGamer/ECL/ECL_8/team_logos/Pro/ECL8%20Pro%20-%20Poggers.png")
+        embed.set_author(name="Postman Phat", url="https://discordapp.com", icon_url="https://cdn.discordapp.com/app-icons/795966880779206656/8b6d6c8e089b7cd499435333dd3c0bf3.png?size=64")
+        embed.set_footer(text="Do people even read this?", icon_url="https://pbs.twimg.com/profile_images/1334111535082446849/LdHGWkZq_400x400.jpg")
+        embed.add_field(name=f"{cardName} has advanced to {destination}!!!", value=f"Made by: {author}", inline = False)
+        config.lastAction = f"Card MovedUP {cardName}"
+        await channel.send(embed=embed)
         
     
 async def cardOnHold(cardName, channel, author):
