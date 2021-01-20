@@ -2,7 +2,6 @@ from configClass import Config
 import discord
 import json
 
-lastAction = None
 
 def readConfig():
     """
@@ -12,7 +11,6 @@ def readConfig():
         config = json.load(json_file)
         json_file.close()
         config = Config(**config)
-        config.Trello = config.clientTrello()
         return config
 config = readConfig()
         
@@ -39,8 +37,6 @@ def calculatePoint(listName):
     elif listName in ["Done" , "Ready for Implementation"]:
         return 4
     
-    else:
-        return 0
     
 def counter(boardName):
     """
@@ -49,19 +45,7 @@ def counter(boardName):
     Args:
         boardName (STR): Name of Parent
     """
-    if boardName == "WRITE":
-        config.countW += 1
-        config.countW_TODO += 1
-        
-    elif boardName == "SOUND":
-        config.countS += 1
-        config.countS_TODO += 1
-    
-    elif boardName == "ART":
-        config.countA += 1
-        config.countA_TODO += 1
-        
-    elif boardName == "WRITE_DONE":
+    if boardName == "WRITE_DONE":
         config.countW += 1
         config.countW_Done += 1
         
