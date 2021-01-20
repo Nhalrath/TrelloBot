@@ -13,6 +13,7 @@ aiohttp == 3.6.3
 pytz == 2020.5
 
 ## Contributors 🤝
+🌱[Jevilonix](https://github.com/jevilonix)
 
 🌱[Nhalrath](https://github.com/Nhalrath)
 
