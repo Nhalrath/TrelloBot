@@ -1,5 +1,5 @@
 # TrelloBot ˙˚ʚ😈ɞ˚˙
-TrelloBot is a disord bot used by [@BlackwingGamin1](https://twitter.com/BlackwingGamin1) to monitor the Trello boards of all teams. 
+TrelloBot is a disord bot used by [@BlackwingGamin1](https://twitter.com/BlackwingGamin1) (Fan Game) to monitor the Trello boards of all teams. 
 
 ## Requirements 📋
 [py-trello==0.17.1](https://github.com/sarumont/py-trello)
