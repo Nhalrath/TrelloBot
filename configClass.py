@@ -65,4 +65,4 @@ class Config:
         self.countS_Done = 0  
         
     def __str__(self):
-        print(f"#########->{executionTime:.2f} seconds <-#########")
+        print(f"#########->{self.executionTime:.2f} seconds <-#########")
