@@ -1,5 +1,0 @@
-py-trello==0.17.1
-discord==1.0.1
-discord.py==1.5.1
-pytz==2020.5
-aiohttp==3.6.3
