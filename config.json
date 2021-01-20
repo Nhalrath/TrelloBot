@@ -1,6 +1,6 @@
 {
     "channelID": "Val",
-    "channelID_M": Val,
+    "channelID_M": "Val",
     "discordToken": "Val",
     "apiK": "Val",
     "apiS": "Val",
@@ -8,3 +8,4 @@
     "board_MVLS": { "Val": "Val"},
 
     "board_CTLS": { "Val": "Val"}
+}

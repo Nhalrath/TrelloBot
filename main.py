@@ -3,13 +3,12 @@ from Util_PMP import calculatePoint, counter, config
 from datetime import datetime, timedelta
 from trello import TrelloClient
 from discord.ext import tasks
-import discord
 import asyncio
+import discord
 import json
 import pytz
 import time
 
-bot = discord.Client()
 
 async def checkChange(aDict, card, channel):
     """
@@ -43,13 +42,14 @@ async def checkCardMovement(listID, targetTime, parentName):
     """
     for card in listID:
         last_move = card.list_movements() 
-        counter(parentName)
+        counter(parentName)   
         try:
             if (last_move[0].get('datetime').replace(tzinfo=pytz.UTC) > targetTime):
-                await checkChange(last_move[0], card, bot.get_channel(config.channelID))
+                await checkChange(last_move[0], card, config.Bot.get_channel(config.channelID))
 
         except IndexError:
             None
+            
         await asyncio.sleep(0.09)
         
         
@@ -62,7 +62,7 @@ async def checkCardCreation(listID, targetTime):
     """
     for card in listID:
         if (card.created_date > targetTime):
-            await cardCreated(card.name, bot.get_channel(config.channelID))
+            await cardCreated(card.name, config.Bot.get_channel(config.channelID))
             
         await asyncio.sleep(0.09)
         
@@ -88,11 +88,11 @@ async def checkTime():
     Main Loop function used for capturing and saving time values used for comparisons
     """
     if (datetime.now(pytz.timezone("Etc/GMT+0")) > config.targetTime):
-        await  performanceChart(bot.get_channel(config.channelID))
+        await  performanceChart(config.Bot.get_channel(config.channelID))
         config.targetTime += timedelta(hours = 24)
         
     elif (config.countW != 0 and config.reportExecute is True):
-        await  performanceChart(bot.get_channel(config.channelID))
+        await  performanceChart(config.Bot.get_channel(config.channelID))
         config.reportExecute = False
         
     else:
@@ -100,24 +100,23 @@ async def checkTime():
         await checkTrello((datetime.now(pytz.timezone(config.timezone)) - timedelta(0,config.executionTime)).replace(tzinfo=pytz.UTC))
         result = (time.time() - start_time)
         config.executionTime = result
-        print(f"#########->{result:.2f} seconds <-#########")
+        print(config)
         
         
-@bot.event
+@config.Bot.event
 async def on_message(message):
     if message.content.startswith('!Report'):
         config.reportExecute = True
-        await bot.get_channel(config.channelID).send("Request sent. The request could take a while, please be patient.")
+        await config.Bot.get_channel(config.channelID).send("Request sent. The request could take a while, please be patient.")
                  
 
-@bot.event
+@config.Bot.event
 async def on_ready():
     """
     Function runs when bot is ready!
     """
     print("I`m Alive")
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="with your feelings", description =''))
+    await config.Bot.change_presence(status=discord.Status.online, activity=discord.Game(name="with your feelings", description =''))
     checkTime.start()
-    
 
-bot.run(config.discordToken)
+config.Bot.run(config.discordToken)
