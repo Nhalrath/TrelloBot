@@ -50,7 +50,7 @@ pytz == 2020.5
 </p>
 
 <p align="center">
+  <a href="https://discord.gg/khFW5Jm">Discord</a> |
   <a href="https://twitter.com/ruirooroo">Banner Artist</a> | 
-  <a href="https://discord.gg/khFW5Jm">BW Discord</a> |
-  <a href="https://kurehakurono.live/tip">BW Donate</a>
+  <a href="https://kurehakurono.live/tip">Donate</a>
 </p>
