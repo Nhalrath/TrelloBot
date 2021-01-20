@@ -9,6 +9,7 @@ import json
 import pytz
 import time
 
+
 async def checkChange(aDict, card, channel):
     """
     Function determines the type of move a card has taken
