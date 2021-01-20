@@ -1,4 +1,7 @@
-<img src="https://pbs.twimg.com/profile_banners/1334111069997031424/1606912035/1500x500">
+
+
+[<img src="https://pbs.twimg.com/profile_banners/1334111069997031424/1606912035/1500x500">](https://twitter.com/ruirooroo)
+
 
 # TrelloBot ˙˚ʚ😈ɞ˚˙
 TrelloBot is a disord bot used by [@BlackwingGamin1](https://twitter.com/BlackwingGamin1) (Fangame) to monitor the Trello boards of our teams. 
@@ -22,9 +25,12 @@ pytz == 2020.5
 🌱[BattleProgrammer-san](https://github.com/BattleProgrammer-san)
 
 
-
-
+<p>
+<a href="https://twitter.com/j0se_kun">
 <img align="left" width="40" height="40" src="https://media.discordapp.net/attachments/741227491896852521/744024371764658237/server-icon.png" alt="Kureha Kurono">
+</a>
+</p>
+
 
 ## [Kureha Kurono 黒乃くれは](https://twitter.com/KurehaKurono/)
 
