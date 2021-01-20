@@ -21,6 +21,9 @@ pytz == 2020.5
 ## [Kureha Kurono 黒乃くれは](https://twitter.com/KurehaKurono)
 
 [Youtube](https://www.youtube.com/channel/UCFVkfdFmaOh7BCtrqw8YvaA)
+
 [Twitch](https://www.twitch.tv/kurehakurono)
+
 [Instagram](https://www.instagram.com/kurehakurono/)
+
 [Bilibili](https://space.bilibili.com/421435246)
