@@ -66,4 +66,3 @@ class Config:
         
     def __str__(self):
         print(f"#########->{executionTime:.2f} seconds <-#########")
-    
