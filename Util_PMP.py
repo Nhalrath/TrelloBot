@@ -68,7 +68,3 @@ def counter(boardName):
     elif boardName == "ART_P":
         config.countA += 1
         config.countA_P += 1
-        
-    
-    
-    
