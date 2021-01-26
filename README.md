@@ -1,3 +1,5 @@
+[<img src="https://pbs.twimg.com/profile_banners/1334111069997031424/1606912035/1500x500">](https://twitter.com/ruirooroo)
+
 # TrelloBot ˙˚ʚ😈ɞ˚˙ <img src="https://img.shields.io/github/last-commit/Xeuz-x/TrelloBot?color=%239f9f9f&style=for-the-badge"> <img src="https://img.shields.io/twitter/follow/xKnight_Grey?label=Follow&style=for-the-badge">
 TrelloBot is a disord bot used by [@BlackwingGamin1](https://twitter.com/BlackwingGamin1) (Fangame) to monitor the Trello boards of our teams. 
 
