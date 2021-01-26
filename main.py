@@ -1,4 +1,4 @@
-from Util_Embed import performanceChart, cardCreated, cardMovedUp, cardOnHold, cardSkippedUp, cardErraticMove
+from Util_Embed import performanceChart, cardCreated, cardMovedUp, cardOnHold, cardSkippedUp, cardErraticMove, timeOutError
 from Util_PMP import calculatePoint, counter, config
 from datetime import datetime, timedelta
 from trello import TrelloClient
@@ -10,29 +10,6 @@ import pytz
 import time
 
 
-async def checkChange(aDict, card, channel):
-    """
-    Function determines the type of move a card has taken
-
-    Args:
-        aDict (DICT): Dictionary containing card information
-        card (OBJ): Card object
-    """
-    author =  config.Trello.get_member(card.idMembers[0]).username if card.idMembers else "Unknown"
-
-    if  aDict.get("destination").get("name") == "On Hold":
-        await cardOnHold(card.name.upper(), channel, author)
-    
-    elif ((calculatePoint(aDict.get("destination").get("name")) - calculatePoint(aDict.get("source").get("name"))) == 1):
-        await cardMovedUp(card.name.upper(), aDict.get('destination').get('name'), channel, author)
-        
-    elif ((calculatePoint(aDict.get("destination").get("name")) - calculatePoint(aDict.get("source").get("name"))) > 1):
-        await cardSkippedUp(card.name.upper(), aDict.get('destination').get('name'), aDict.get("destination").get("name"), channel, author)
-        
-    else:
-        await cardErraticMove(card.name.upper(), aDict.get("source").get("name"), aDict.get("destination").get("name"), channel, author)
-    
-
 async def checkCardMovement(listID, targetTime, parentName):
     """
     Checks the movement history of each card
@@ -43,13 +20,6 @@ async def checkCardMovement(listID, targetTime, parentName):
     for card in listID:
         last_move = card.list_movements() 
         counter(parentName)   
-        try:
-            if (last_move[0].get('datetime').replace(tzinfo=pytz.UTC) > targetTime):
-                await checkChange(last_move[0], card, config.Bot.get_channel(config.channelID))
-
-        except IndexError:
-            None
-            
         await asyncio.sleep(0.09)
         
         
@@ -82,7 +52,6 @@ async def checkTrello(targetTime):
         await checkCardCreation((config.Trello.list_boards()[-1]).get_list(boardID).list_cards(), targetTime)
 
 
-@tasks.loop()
 async def checkTime():
     """
     Main Loop function used for capturing and saving time values used for comparisons
@@ -103,6 +72,18 @@ async def checkTime():
         print(config)
         
         
+@tasks.loop()
+async def mainLoop():
+    """
+    Main loop function
+    """
+    try:
+        await checkTime()
+    
+    except:
+        timeOutError
+
+
 @config.Bot.event
 async def on_message(message):
     if message.content.startswith('!Report'):
@@ -117,6 +98,6 @@ async def on_ready():
     """
     print("I`m Alive")
     await config.Bot.change_presence(status=discord.Status.online, activity=discord.Game(name="with your feelings", description =''))
-    checkTime.start()
+    mainLoop.start()
 
 config.Bot.run(config.discordToken)

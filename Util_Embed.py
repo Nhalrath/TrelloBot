@@ -2,6 +2,34 @@ from datetime import datetime
 from Util_PMP import config
 import discord
 
+
+async def timeOutError(date, channel):
+    """
+    Function uses discord embeds to send the an error report
+
+    Args:
+        date (STR): Name of card
+        channel (OBJ): Discord channel object
+    """
+                 
+    embed = discord.Embed(title="🚨 Timeout Error 🚨", colour=discord.Colour(0x12e4ff), url="https://discordapp.com")
+    embed.set_image(url="https://banner2.cleanpng.com/20181115/fb/kisspng-illustration-image-dogeza-apologia-blog-5bee40a206d977.4177758715423407700281.jpg")
+    embed.set_thumbnail(url="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/sorry.png")
+    embed.set_author(name="Xeus", url="https://twitter.com/xKnight_Grey", icon_url="https://cdn.discordapp.com/app-icons/795966880779206656/8b6d6c8e089b7cd499435333dd3c0bf3.png?size=64")
+    embed.set_footer(text="Do people even read this?", icon_url="https://pbs.twimg.com/profile_images/1334111535082446849/LdHGWkZq_400x400.jpg")
+    embed.add_field(name=f"Mail Sent: Timeout Error {date}", value=f"Sorry for the inconvenience.", inline = False)
+    await channel.send(embed=embed)
+    
+
+    ratio = (config.totalCallCount)/(config.executionTime * 30)
+    percent = round(ratio * 100 , 1)
+    loaded = round(ratio * 20) * "#"
+    unloaded = (20 - round(ratio * 20)) * "-"
+    progressBar = '[' + loaded + unloaded + ']'
+    string = f"```asciidoc\n      Statistics\n----------------------\nRuntime(Ave):: {config.executionTime:.1f}s\nItererations:: {config.iterationCounter}\nRaised Errors:: {config.nErrors}\n   API Usage: {percent}%\n----------------------\n{progressBar}```"
+    await channel.send(string)
+    
+    
 async def performanceChart(channel = config.channelID_M):
     """
     Function uses discord embeds to send the daily report messages
