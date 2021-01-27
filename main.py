@@ -96,7 +96,7 @@ async def on_ready():
     """
     Function runs when bot is ready!
     """
-    print("I`m Alive")
+    print("Online")
     await config.Bot.change_presence(status=discord.Status.online, activity=discord.Game(name="with your feelings", description =''))
     mainLoop.start()
 
