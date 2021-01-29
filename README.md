@@ -1,9 +1,7 @@
-
-
 [<img src="https://pbs.twimg.com/profile_banners/1334111069997031424/1606912035/1500x500">](https://twitter.com/ruirooroo)
 
 
-# TrelloBot ˙˚ʚ😈ɞ˚˙
+# TrelloBot ˙˚ʚ😈ɞ˚˙ <img align="center" src="https://img.shields.io/github/last-commit/Xeuz-x/TrelloBot?color=%239f9f9f&style=for-the-badge"> [<img align="center" src="https://img.shields.io/twitter/follow/xKnight_Grey?label=Follow&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyBmaWxsPSIjMURBMUYyIiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGl0bGU%2BVHdpdHRlciBpY29uPC90aXRsZT48cGF0aCBkPSJNMjMuOTUzIDQuNTdhMTAgMTAgMCAwMS0yLjgyNS43NzUgNC45NTggNC45NTggMCAwMDIuMTYzLTIuNzIzYy0uOTUxLjU1NS0yLjAwNS45NTktMy4xMjcgMS4xODRhNC45MiA0LjkyIDAgMDAtOC4zODQgNC40ODJDNy42OSA4LjA5NSA0LjA2NyA2LjEzIDEuNjQgMy4xNjJhNC44MjIgNC44MjIgMCAwMC0uNjY2IDIuNDc1YzAgMS43MS44NyAzLjIxMyAyLjE4OCA0LjA5NmE0LjkwNCA0LjkwNCAwIDAxLTIuMjI4LS42MTZ2LjA2YTQuOTIzIDQuOTIzIDAgMDAzLjk0NiA0LjgyNyA0Ljk5NiA0Ljk5NiAwIDAxLTIuMjEyLjA4NSA0LjkzNiA0LjkzNiAwIDAwNC42MDQgMy40MTcgOS44NjcgOS44NjcgMCAwMS02LjEwMiAyLjEwNWMtLjM5IDAtLjc3OS0uMDIzLTEuMTctLjA2N2ExMy45OTUgMTMuOTk1IDAgMDA3LjU1NyAyLjIwOWM5LjA1MyAwIDEzLjk5OC03LjQ5NiAxMy45OTgtMTMuOTg1IDAtLjIxIDAtLjQyLS4wMTUtLjYzQTkuOTM1IDkuOTM1IDAgMDAyNCA0LjU5eiIvPjwvc3ZnPg%3D%3D&logoColor=%239f9f9f&style=for-the-badge">](https://twitter.com/intent/follow?screen_name=xKnight_Grey)
 TrelloBot is a disord bot used by [@BlackwingGamin1](https://twitter.com/BlackwingGamin1) (Fangame) to monitor the Trello boards of our teams. 
 
 
