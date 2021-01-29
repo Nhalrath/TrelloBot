@@ -81,7 +81,7 @@ async def mainLoop():
         await checkTime()
     
     except:
-        timeOutError
+        timeOutError()
 
 
 @config.Bot.event
